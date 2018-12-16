@@ -5,6 +5,7 @@ import (
 	"log"
 	"strconv"
 
+	"github.com/fatih/color"
 	"github.com/spf13/cobra"
 )
 
@@ -32,7 +33,9 @@ func sumCmd() *cobra.Command {
 				return nil
 			}
 
-			fmt.Println(itemOne + itemTwo)
+			green := color.New(color.FgGreen).SprintFunc()
+
+			fmt.Println(green(itemOne + itemTwo))
 
 			return nil
 		},
